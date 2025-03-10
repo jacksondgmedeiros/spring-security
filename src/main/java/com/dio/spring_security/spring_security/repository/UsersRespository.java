@@ -10,4 +10,7 @@ public interface UsersRespository extends JpaRepository<User, Integer> {
     @Query("SELECT e FROM User e JOIN FETCH e.roles WHERE e.userName = (:username)")
     public User findByUsername(@Param("username") String username);
 
+//    verifica se existe o usuário no banco
+    boolean existsByUsername(String username);
+
 }
