@@ -1,4 +1,4 @@
-package com.dio.spring_security.spring_security;
+package com.dio.spring_security.spring_security.controller;
 
 import com.dio.spring_security.spring_security.model.User;
 import com.dio.spring_security.spring_security.repository.UsersRespository;
