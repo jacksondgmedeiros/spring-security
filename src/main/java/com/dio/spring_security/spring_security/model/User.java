@@ -24,6 +24,14 @@ public class User {
     public User() {
     }
 
+    public User(String userName, String password, Object o) {
+        this.userName = userName;
+        this.password = password;
+        this.roles = (List<String>) o;
+
+
+    }
+
     public User(String userName) {
         this.userName = userName;
     }
