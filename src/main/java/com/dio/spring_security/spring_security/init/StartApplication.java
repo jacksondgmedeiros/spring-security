@@ -19,7 +19,7 @@ public class StartApplication implements CommandLineRunner {
             user = new User();
             user.setName("ADMIN");
             user.setUserName("admin");
-            user.setPassword(" ");
+            user.setPassword("master123");
             user.getRoles().add("MANAGERS");
             repository.save(user);
         }

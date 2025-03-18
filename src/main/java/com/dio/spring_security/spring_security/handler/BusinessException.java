@@ -7,6 +7,7 @@ public class BusinessException extends RuntimeException {
 
     // conteudo dinamico
     public BusinessException(String message, Object... params) {
+
         super(String.format(message, params));
     }
 }

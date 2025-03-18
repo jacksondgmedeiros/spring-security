@@ -1,5 +1,7 @@
 package com.dio.spring_security.spring_security.service;
 
+import com.dio.spring_security.spring_security.handler.BusinessException;
+import com.dio.spring_security.spring_security.handler.CampoObrigatorioExpection;
 import com.dio.spring_security.spring_security.model.User;
 import com.dio.spring_security.spring_security.repository.UsersRespository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +13,18 @@ public class UserService {
     @Autowired
     private UsersRespository usersRespository;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
 
     public void createUser(User user){
         String pass = user.getPassword();
 
-        //criptografa a senha antes de salvar no banco
-//        user.setPassword(passwordEncoder.encode(pass));
+        if (user.getUserName()== null){
+            throw new CampoObrigatorioExpection("userName");
+        }
+
+        if (user.getPassword()== null){
+            throw new CampoObrigatorioExpection("password");
+        }
+
         usersRespository.save(user);
     }
 }
